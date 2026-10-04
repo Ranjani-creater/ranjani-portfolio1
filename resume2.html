@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ranjani Devipriya | Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8f3ff;
+            color: #3f3b46;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* NAVIGATION */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            border-bottom: 1px solid #ddd0ee;
+        }
+
+        nav {
+            max-width: 1100px;
+            margin: auto;
+            padding: 18px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #7651a9;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 15px;
+            color: #4f465b;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #7651a9;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 70px 25px;
+        }
+
+        .hero-container {
+            max-width: 1100px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .hero-text {
+            max-width: 650px;
+        }
+
+        .hello {
+            color: #8a63bd;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            color: #352d40;
+            margin-bottom: 10px;
+        }
+
+        .hero h2 {
+            font-size: 25px;
+            font-weight: normal;
+            color: #7651a9;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 600px;
+            color: #62596d;
+            font-size: 17px;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border-radius: 25px;
+            border: none;
+            cursor: pointer;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .primary-btn {
+            background: #9b7bc7;
+            color: white;
+        }
+
+        .primary-btn:hover {
+            background: #8663b5;
+            transform: translateY(-2px);
+        }
+
+        .secondary-btn {
+            border: 1px solid #b9a2d3;
+            color: #684a91;
+            background: white;
+        }
+
+        .secondary-btn:hover {
+            background: #eee4f8;
+        }
+
+        /* PROFILE IMAGE */
+        .profile-box {
+            width: 280px;
+            height: 280px;
+            background: #dfd0f0;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .profile-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-placeholder {
+            text-align: center;
+            color: #765c99;
+            padding: 20px;
+        }
+
+        /* COMMON SECTION */
+        section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 80px 25px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 34px;
+            color: #40364d;
+        }
+
+        .section-title p {
+            color: #746b80;
+            margin-top: 5px;
+        }
+
+        /* ABOUT */
+        .about-content {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text p {
+            color: #5f5668;
+            margin-bottom: 18px;
+        }
+
+        .info-box {
+            background: white;
+            padding: 25px;
+            border-radius: 18px;
+            box-shadow: 0 5px 20px rgba(100, 90, 120, 0.08);
+            min-width: 300px;
+        }
+
+        .info-box p {
+            margin-bottom: 10px;
+        }
+
+        .info-box strong {
+            color: #684a91;
+        }
+
+        /* EDUCATION */
+        .education-card {
+            background: #e7daf5;
+            padding: 30px;
+            border-radius: 20px;
+            max-width: 750px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .education-card h3 {
+            color: #604080;
+            margin-bottom: 8px;
+        }
+
+        .education-card p {
+            color: #665d70;
+            margin: 5px 0;
+        }
+
+        .cgpa {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 8px 18px;
+            background: white;
+            border-radius: 20px;
+            color: #684a91;
+            font-weight: bold;
+        }
+
+        /* SKILLS */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .skill-box {
+            background: white;
+            padding: 28px;
+            border-radius: 18px;
+            box-shadow: 0 5px 20px rgba(100, 90, 120, 0.07);
+        }
+
+        .skill-box h3 {
+            color: #684a91;
+            margin-bottom: 15px;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill {
+            background: #e4d8f2;
+            color: #5c4675;
+            padding: 7px 13px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        /* INTERNSHIP */
+        .internship-card {
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(100, 90, 120, 0.08);
+        }
+
+        .internship-card h3 {
+            color: #604080;
+            font-size: 23px;
+        }
+
+        .organization {
+            color: #8a63bd;
+            margin: 5px 0 20px;
+            font-weight: bold;
+        }
+
+        .internship-card ul {
+            padding-left: 20px;
+            color: #6c6672;
+        }
+
+        .internship-card li {
+            margin-bottom: 8px;
+        }
+
+        /* PROJECTS */
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            background: white;
+            padding: 28px;
+            border-radius: 18px;
+            box-shadow: 0 5px 20px rgba(100, 90, 120, 0.08);
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-number {
+            font-size: 30px;
+            color: #9b7bc7;
+            font-weight: bold;
+        }
+
+        .project-card h3 {
+            color: #51465c;
+            margin: 10px 0;
+        }
+
+        .project-card p {
+            color: #6b6172;
+            font-size: 15px;
+        }
+
+        .tech {
+            margin-top: 15px;
+            color: #7651a9;
+            font-size: 13px;
+        }
+
+        /* CERTIFICATE */
+        .certificate {
+            background: #e9def6;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .certificate h3 {
+            color: #604080;
+            margin-bottom: 10px;
+        }
+
+        .certificate p {
+            color: #6b6172;
+        }
+
+        .certificate-image {
+            max-width: 650px;
+            width: 100%;
+            margin-top: 25px;
+            border-radius: 12px;
+            display: none;
+        }
+
+        /* ACTIVITIES & INTERESTS */
+        .simple-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .simple-card {
+            background: white;
+            padding: 30px;
+            border-radius: 18px;
+            box-shadow: 0 5px 20px rgba(100, 90, 120, 0.07);
+        }
+
+        .simple-card h3 {
+            color: #684a91;
+            margin-bottom: 12px;
+        }
+
+        .simple-card p {
+            color: #665d6d;
+        }
+
+        /* CONTACT */
+        .contact-section {
+            background: #e7daf5;
+            max-width: none;
+        }
+
+        .contact-container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 25px;
+            text-align: center;
+        }
+
+        .contact-container h2 {
+            font-size: 34px;
+            color: #40364d;
+            margin-bottom: 15px;
+        }
+
+        .contact-container p {
+            color: #62596d;
+            margin-bottom: 25px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .contact-item {
+            background: white;
+            padding: 12px 20px;
+            border-radius: 25px;
+            color: #684a91;
+            transition: 0.3s;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-2px);
+            background: #f1eafa;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #d9c9eb;
+            color: #5e4d6e;
+            font-size: 14px;
+        }
+
+        /* MOBILE */
+        @media (max-width: 800px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero-container {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+
+            .skills-container,
+            .projects-container,
+            .simple-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-box {
+                width: 220px;
+                height: 220px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <div class="logo">Raya.</div>
+
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#internship">Internship</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+
+    <div class="hero-container">
+
+        <div class="hero-text">
+
+            <div class="hello">
+                Hello, I'm
+            </div>
+
+            <h1>Ranjani Devipriya R</h1>
+
+            <h2>B.Sc. Information Technology Student</h2>
+
+            <p>
+                I'm an Information Technology student who enjoys
+                learning technology, building projects and exploring
+                different areas of the digital world.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#projects"
+                   class="btn primary-btn">
+                    View My Work
+                </a>
+
+                <a href="#contact"
+                   class="btn secondary-btn">
+                    Contact Me
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="profile-box">
+
+            <div class="profile-placeholder">
+
+                
+                <img src="profile.jpg"
+                 alt="Ranjani Devipriya"
+                 class="profile-image">
+
+
+                
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="about">
+
+    <div class="section-title">
+        <h2>About Me</h2>
+        <p>A little about me</p>
+    </div>
+
+    <div class="about-content">
+
+        <div class="about-text">
+
+            <p>
+                I am Ranjani Devipriya R, a second-year
+                B.Sc. Information Technology student at
+                Nandha Arts and Science College (Autonomous).
+            </p>
+
+            <p>
+                I enjoy learning programming, web development,
+                databases, artificial intelligence and machine
+                learning. I also like combining technology with
+                creativity and design.
+            </p>
+
+            <p>
+                I am currently exploring different areas of
+                technology while developing my technical skills
+                through projects, internships and practical learning.
+            </p>
+
+        </div>
+
+        <div class="info-box">
+
+            <p><strong>Degree:</strong> B.Sc. Information Technology</p>
+            <p><strong>Year:</strong> 2nd Year</p>
+            <p><strong>Semester:</strong> 3</p>
+            <p><strong>CGPA:</strong> 8.32</p>
+            <p><strong>Location:</strong> Tirupur, Tamil Nadu</p>
+            <p><strong>Languages:</strong> Tamil, English</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="education">
+
+    <div class="section-title">
+        <h2>Education</h2>
+        <p>My academic journey</p>
+    </div>
+
+    <div class="education-card">
+
+        <h3>B.Sc. Information Technology</h3>
+
+        <p>NANDHA ARTS AND SCIENCE COLLEGE (AUTONOMOUS)</p>
+
+        <p>2nd Year • Semester 3</p>
+
+        <span class="cgpa">
+            CGPA: 8.32
+        </span>
+
+    </div>
+
+</section>
+
+<section id="skills">
+
+    <div class="section-title">
+        <h2>Skills</h2>
+        <p>Technologies and skills I'm learning</p>
+    </div>
+
+    <div class="skills-container">
+
+        <div class="skill-box">
+
+            <h3>Technical Skills</h3>
+
+            <div class="skill-list">
+                <span class="skill">Java</span>
+                <span class="skill">Python</span>
+                <span class="skill">C</span>
+                <span class="skill">HTML</span>
+                <span class="skill">CSS</span>
+                <span class="skill">JavaScript</span>
+                <span class="skill">SQL</span>
+                <span class="skill">MySQL</span>
+                <span class="skill">Oracle</span>
+                <span class="skill">Django</span>
+                <span class="skill">Artificial Intelligence</span>
+                <span class="skill">Machine Learning</span>
+            </div>
+
+        </div>
+
+        <div class="skill-box">
+
+            <h3>Tools</h3>
+
+            <div class="skill-list">
+                <span class="skill">VS Code</span>
+                <span class="skill">Jupyter Notebook</span>
+                <span class="skill">Anaconda</span>
+                <span class="skill">Git</span>
+                <span class="skill">GitHub</span>
+            </div>
+
+        </div>
+
+        <div class="skill-box">
+
+            <h3>Soft Skills</h3>
+
+            <div class="skill-list">
+                <span class="skill">Communication</span>
+                <span class="skill">Teamwork</span>
+                <span class="skill">Problem Solving</span>
+                <span class="skill">Creativity</span>
+                <span class="skill">Quick Learning</span>
+                <span class="skill">Time Management</span>
+            </div>
+
+        </div>
+
+        <div class="skill-box">
+
+            <h3>Languages</h3>
+
+            <div class="skill-list">
+                <span class="skill">Tamil</span>
+                <span class="skill">English</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="internship">
+
+    <div class="section-title">
+        <h2>Internship</h2>
+        <p>My practical learning experience</p>
+    </div>
+
+    <div class="internship-card">
+
+        <h3>AI & Machine Learning Intern</h3>
+
+        <div class="organization">
+            Indian Institute of Computing and Technology (IICT)
+        </div>
+
+        <ul>
+            <li>Worked with the Titanic dataset for machine learning practice.</li>
+            <li>Performed data visualization and exploratory data analysis.</li>
+            <li>Applied statistics and data preprocessing techniques.</li>
+            <li>Implemented Linear Regression and Logistic Regression models.</li>
+            <li>Explored K-Means clustering.</li>
+            <li>Evaluated machine learning model performance.</li>
+            <li>Used Python, Jupyter Notebook and Anaconda for practical work.</li>
+        </ul>
+
+    </div>
+
+</section>
+
+<section id="projects">
+
+    <div class="section-title">
+        <h2>Projects</h2>
+        <p>Some of my practical work</p>
+    </div>
+
+    <div class="projects-container">
+
+        <div class="project-card">
+
+            <div class="project-number">01</div>
+
+            <h3>StudyConnect</h3>
+
+            <p>
+                A student-focused web platform where users can
+                register, log in, create posts and interact with
+                other students.
+            </p>
+
+            <div class="tech">
+                Django • Python • HTML • CSS
+            </div>
+
+        </div>
+
+        <div class="project-card">
+
+            <div class="project-number">02</div>
+
+            <h3>Fake News Detection</h3>
+
+            <p>
+                A machine learning project designed to classify
+                news content as real or fake using Python and
+                machine learning techniques.
+            </p>
+
+            <div class="tech">
+                Python • Machine Learning
+            </div>
+
+        </div>
+
+        <div class="project-card">
+
+            <div class="project-number">03</div>
+
+            <h3>Phishing Email Detection</h3>
+
+            <p>
+                A machine learning project that identifies
+                potentially phishing emails and helps distinguish
+                them from legitimate messages.
+            </p>
+
+            <div class="tech">
+                Python • Machine Learning
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="certificate">
+
+    <div class="section-title">
+        <h2>Certificate</h2>
+        <p>Professional learning</p>
+    </div>
+
+    <div class="certificate">
+
+        <h3>AI & Machine Learning Internship Certificate</h3>
+
+        <p>
+            Indian Institute of Computing and Technology (IICT)
+        </p>
+
+    </div>
+
+</section>
+
+<section id="activities">
+
+    <div class="section-title">
+        <h2>Activities</h2>
+        <p>Beyond academics</p>
+    </div>
+
+    <div class="simple-grid">
+
+        <div class="simple-card">
+
+            <h3>Class Representative</h3>
+
+            <p>
+                Responsible for representing the class and
+                communicating information between students
+                and faculty.
+            </p>
+
+        </div>
+
+        <div class="simple-card">
+
+            <h3>Workshops & Seminars</h3>
+
+            <p>
+                Participated in workshops and seminars to
+                improve technical knowledge and gain exposure
+                to new technologies.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="interests">
+
+    <div class="section-title">
+        <h2>Interests</h2>
+        <p>Things I enjoy</p>
+    </div>
+
+    <div class="simple-grid">
+
+        <div class="simple-card">
+            <h3>🎨 Drawing</h3>
+            <p>
+                Exploring creativity through drawing and visual art.
+            </p>
+        </div>
+
+        <div class="simple-card">
+            <h3>📚 Book Reading</h3>
+            <p>
+                Enjoying books and discovering new ideas through reading.
+            </p>
+        </div>
+
+        <div class="simple-card">
+            <h3>✂️ Crafts</h3>
+            <p>
+                Creating things by experimenting with different
+                craft ideas and materials.
+            </p>
+        </div>
+
+        <div class="simple-card">
+            <h3>✨ Designing</h3>
+            <p>
+                Interested in creative design, fashion and
+                visual aesthetics.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="contact-section" id="contact">
+
+    <div class="contact-container">
+
+        <h2>Let's Connect</h2>
+
+        <p>
+            Feel free to reach out for opportunities,
+            collaborations or simply to connect.
+        </p>
+
+        <div class="contact-links">
+
+            <a class="contact-item"
+               href="mailto:ranjanidevipriya@gmail.com">
+                📧 Email
+            </a>
+
+            <a class="contact-item"
+               href="tel:9659962522">
+                📱 Phone
+            </a>
+
+            <a class="contact-item"
+               href="https://www.linkedin.com/in/ranjani-devipriya-ramesh-76a5b137/"
+               target="_blank">
+                💼 LinkedIn
+            </a>
+
+            <span class="contact-item">
+                📍 Tirupur, Tamil Nadu
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+
+    <p>
+        © 2026 Ranjani Devipriya R • Designed with simplicity ✨
+    </p>
+
+</footer>
+
+<script>
+    console.log("Welcome to Ranjani Devipriya's Portfolio!");
+</script>
+
+</body>
+</html>
